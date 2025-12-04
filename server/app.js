@@ -26,3 +26,5 @@ app.use(favicon(`${__dirname}/../hosted/img/favicon.png`));
 app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.engine('handlebars', expressHandlebars.engine({ defaultLayout: '' }));
