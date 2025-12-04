@@ -16,7 +16,9 @@ const DomoSchema = new mongoose.Schema({
         required: true,
     },
     owner: {
-
+        type: mongoose.Schema.ObjectId,
+        required: true,
+        ref: 'Account',
     },
     createdDate: {
 
