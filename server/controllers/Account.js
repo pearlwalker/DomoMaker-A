@@ -20,6 +20,8 @@ const login = (req, res) => {
         if(err || !account) {
             return res.status(401).json({ error: 'Incorrect username or password!' });
         }
+
+        return res.json({ redirect: '/maker' });
     });
 };
 
