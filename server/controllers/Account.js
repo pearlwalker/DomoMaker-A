@@ -6,7 +6,7 @@ const loginPage = (req, res) => {
 };
 
 const signupPage = (req, res) => {
-
+    return res.render('signup');
 };
 
 const logout = (req, res) => {
