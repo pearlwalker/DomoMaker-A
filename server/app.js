@@ -30,3 +30,5 @@ app.use(express.json());
 app.engine('handlebars', expressHandlebars.engine({ defaultLayout: '' }));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/../views`);
+
+router(app);
