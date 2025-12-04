@@ -4,7 +4,8 @@ const { Domo } = models;
 
 const makerPage = async (req, res) => {
   try {
-
+    const query = { owner: req.session.account._id };
+    
   } catch (err) {
     console.log(err);
     return res.status(500).json({ error: 'Error retrieving Domos!' });
