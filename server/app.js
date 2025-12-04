@@ -43,6 +43,9 @@ redisClient.connect().then(() => {
 
   app.use(session({
     key: 'sessionid',
+    store: new RedisStore({
+      client: redisClient,
+    }),
     secret: 'Domo Arigato',
     resave: false,
     saveUninitialized: false,
