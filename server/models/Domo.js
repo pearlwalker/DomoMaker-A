@@ -17,3 +17,7 @@ const DomoSchema = new mongoose.Schema({
 
     },
 });
+
+DomoSchema.statics.toAPI = (doc) => ({
+
+});
