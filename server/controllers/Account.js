@@ -32,6 +32,7 @@ const signup = async (req, res) => {
     if(err.code === 11000) {
         return res.status(400).json({ error: 'Username already in use!' });
     }
+    return res.status(500).json({ error: 'Internal server error has occured!'});
   }
 };
 
