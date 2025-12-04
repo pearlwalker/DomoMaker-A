@@ -21,3 +21,6 @@ const DomoSchema = new mongoose.Schema({
 DomoSchema.statics.toAPI = (doc) => ({
 
 });
+
+const DomoModel = mongoose.model('Domo', DomoSchema);
+module.exports = DomoModel;
