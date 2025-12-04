@@ -17,8 +17,10 @@ const login = (req, res) => {
     };
 
     return Account.authenticate(username, pass, (err, account) => {
-        
-    })
+        if(err || !account) {
+            return res.status(401).json({ error: 'Incorrect username or password!' });
+        }
+    });
 };
 
 const signup = async (req, res) => {
