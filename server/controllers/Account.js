@@ -1,17 +1,12 @@
 const models = require('../models');
-const Account = models.Account;
 
-const loginPage = (req, res) => {
-    return res.render('login');
-};
+const { Account } = models;
 
-const signupPage = (req, res) => {
-    return res.render('signup');
-};
+const loginPage = (req, res) => res.render('login');
 
-const logout = (req, res) => {
-    return res.redirect('/');
-};
+const signupPage = (req, res) => res.render('signup');
+
+const logout = (req, res) => res.redirect('/');
 
 const login = (req, res) => {
 
@@ -22,9 +17,9 @@ const signup = (req, res) => {
 };
 
 module.exports = {
-    loginPage,
-    signupPage,
-    logout,
-    login,
-    signup,
+  loginPage,
+  signupPage,
+  logout,
+  login,
+  signup,
 };
