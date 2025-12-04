@@ -10,6 +10,7 @@ const logout = (req, res) => res.redirect('/');
 
 const login = (req, res) => {
     const username = `${req.body.username}`;
+    const pass = `${req.body.pass}`;
 };
 
 const signup = async (req, res) => {
