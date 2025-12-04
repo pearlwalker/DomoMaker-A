@@ -21,7 +21,8 @@ const DomoSchema = new mongoose.Schema({
         ref: 'Account',
     },
     createdDate: {
-
+        type: Date,
+        default: Date.now,
     },
 });
 
