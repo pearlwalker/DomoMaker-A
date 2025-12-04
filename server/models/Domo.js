@@ -5,7 +5,10 @@ const setName = (name) => _.escape(name).trim();
 
 const DomoSchema = new mongoose.Schema({
     name: {
-
+        type: String,
+        required: true,
+        trim: true,
+        set: setName,
     },
     age: {
 
