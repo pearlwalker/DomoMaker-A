@@ -9,7 +9,12 @@ const signupPage = (req, res) => {
 
 };
 
+const logout = (req, res) => {
+
+};
+
 module.exports = {
     loginPage,
     signupPage,
+    logout,
 };
