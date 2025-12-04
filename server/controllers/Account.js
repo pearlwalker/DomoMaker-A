@@ -29,13 +29,13 @@ const signup = async (req, res) => {
     const hash = await Account.generateHash(pass);
     const newAccount = new Account({ username, password: hash });
     await newAccount.save();
-    return res.json({ redirect: '/maker'});
+    return res.json({ redirect: '/maker' });
   } catch (err) {
     console.log(err);
-    if(err.code === 11000) {
-        return res.status(400).json({ error: 'Username already in use!' });
+    if (err.code === 11000) {
+      return res.status(400).json({ error: 'Username already in use!' });
     }
-    return res.status(500).json({ error: 'Internal server error has occured!'});
+    return res.status(500).json({ error: 'Internal server error has occured!' });
   }
 };
 
