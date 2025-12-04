@@ -26,7 +26,7 @@ const signup = async (req, res) => {
   }
 
   try {
-
+    const hash = await Account.generateHash(pass);
   } catch (err) {
     console.log(err);
     if(err.code === 11000) {
