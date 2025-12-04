@@ -12,8 +12,7 @@ const login = (req, res) => {
 
 };
 
-const signup = (req, res) => {
-
+const signup = async (req, res) => {
 };
 
 module.exports = {
