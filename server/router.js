@@ -13,7 +13,7 @@ const router = (app) => {
   app.get('/maker', controllers.Domo.makerPage);
   app.post('/maker', controllers.Domo.makeDomo);
 
-  app.get('/', controllers.Account.loginPage);
+  app.get('/',  mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 };
 
 module.exports = router;
