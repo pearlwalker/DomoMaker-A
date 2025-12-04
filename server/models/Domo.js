@@ -11,7 +11,9 @@ const DomoSchema = new mongoose.Schema({
         set: setName,
     },
     age: {
-
+        type: Number,
+        min: 0,
+        required: true,
     },
     owner: {
 
