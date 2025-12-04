@@ -24,6 +24,12 @@ const signup = async (req, res) => {
   if (pass !== pass2) {
     return res.status(400).json({ error: 'Passwords do not match.' });
   }
+
+  try {
+
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 module.exports = {
