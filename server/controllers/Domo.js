@@ -5,6 +5,7 @@ const { Domo } = models;
 const makerPage = async (req, res) => {
   try {
     const query = { owner: req.session.account._id };
+    const docs = await Domo.find(query).select('name age').lean().exec();
     
   } catch (err) {
     console.log(err);
