@@ -15,6 +15,10 @@ const login = (req, res) => {
     if(!username || !pass) {
         return res.status(400).json({ error: 'All fields are required!' });
     };
+
+    return Account.authenticate(username, pass, (err, account) => {
+        
+    })
 };
 
 const signup = async (req, res) => {
