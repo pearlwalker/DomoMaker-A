@@ -24,6 +24,8 @@ const login = (req, res) => {
       return res.status(401).json({ error: 'Incorrect username or password!' });
     }
 
+    req.session.account = Account.toAPI(account);
+
     return res.json({ redirect: '/maker' });
   });
 };
