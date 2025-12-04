@@ -13,6 +13,7 @@ const login = (req, res) => {
 };
 
 const signup = async (req, res) => {
+    const username = `${req.body.username}`;
 };
 
 module.exports = {
