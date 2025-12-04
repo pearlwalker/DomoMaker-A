@@ -26,6 +26,7 @@ const redisClient = redis.createClient({
   url: process.env.REDISCLOUD_URL,
 });
 
+redisClient.on('error', err => console.log('Redis Client Error', err));
 
 const app = express();
 
