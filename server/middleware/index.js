@@ -9,3 +9,7 @@ const requiresLogout = (req, res, next) => {
 const requiresSecure = (req, res, next) => {
 
 };
+
+const bypassSecure = (req, res, next) => {
+
+};
