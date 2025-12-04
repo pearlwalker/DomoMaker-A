@@ -18,7 +18,8 @@ const makeDomo = async (req, res) => {
   };
 
   try {
-
+    const newDomo = new Domo(domoData);
+    await newDomo.save();
   } catch (err) {
     console.log(err);
   }
