@@ -3,7 +3,11 @@ const models = require('../models');
 const { Domo } = models;
 
 const makerPage = async (req, res) => {
-  res.render('app');
+  try {
+
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const makeDomo = async (req, res) => {
