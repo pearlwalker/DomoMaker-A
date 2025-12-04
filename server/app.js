@@ -22,6 +22,11 @@ mongoose.connect(dbURI).catch((err) => {
   }
 });
 
+const redisClient = redis.createClient({
+  url: process.env.REDISCLOUD_URL,
+});
+
+
 const app = express();
 
 app.use(helmet());
