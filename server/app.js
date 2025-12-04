@@ -17,3 +17,5 @@ mongoose.connect(dbURI).catch((err) => {
         throw err;
     }
 });
+
+const app = express();
