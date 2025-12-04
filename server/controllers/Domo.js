@@ -16,6 +16,12 @@ const makeDomo = async (req, res) => {
     age: req.body.age,
     owner: req.session.account._id,
   };
+
+  try {
+
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 module.exports = {
