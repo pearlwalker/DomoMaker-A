@@ -5,3 +5,5 @@ const favicon = require('serve-favicon');
 const mongoose = require('mongoose');
 const expressHandlebars = require('express-handlebars');
 const helmet = require('helmet');
+
+const router = require('./router.js');
