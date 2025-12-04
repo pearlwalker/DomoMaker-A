@@ -17,9 +17,14 @@ const login = (req, res) => {
 
 };
 
+const signup = (req, res) => {
+
+};
+
 module.exports = {
     loginPage,
     signupPage,
     logout,
     login,
+    signup,
 };
