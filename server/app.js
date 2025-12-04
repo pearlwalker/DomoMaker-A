@@ -28,28 +28,33 @@ const redisClient = redis.createClient({
 
 redisClient.on('error', err => console.log('Redis Client Error', err));
 
-const app = express();
+redisClient.connect().then(() => {
 
-app.use(helmet());
-app.use('/assets', express.static(path.resolve(`${__dirname}/../hosted`)));
-app.use(favicon(`${__dirname}/../hosted/img/favicon.png`));
-app.use(compression());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
-app.use(session({
-  key: 'sessionid',
-  secret: 'Domo Arigato',
-  resave: false,
-  saveUninitialized: false,
-}));
 
-app.engine('handlebars', expressHandlebars.engine({ defaultLayout: '' }));
-app.set('view engine', 'handlebars');
-app.set('views', `${__dirname}/../views`);
+  const app = express();
 
-router(app);
-app.listen(port, (err) => {
-  if (err) { throw err; }
-  console.log(`Listening on port ${port}`);
+  app.use(helmet());
+  app.use('/assets', express.static(path.resolve(`${__dirname}/../hosted`)));
+  app.use(favicon(`${__dirname}/../hosted/img/favicon.png`));
+  app.use(compression());
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
+
+  app.use(session({
+    key: 'sessionid',
+    secret: 'Domo Arigato',
+    resave: false,
+    saveUninitialized: false,
+  }));
+
+  app.engine('handlebars', expressHandlebars.engine({ defaultLayout: '' }));
+  app.set('view engine', 'handlebars');
+  app.set('views', `${__dirname}/../views`);
+
+  router(app);
+  app.listen(port, (err) => {
+    if (err) { throw err; }
+    console.log(`Listening on port ${port}`);
+  });
 });
